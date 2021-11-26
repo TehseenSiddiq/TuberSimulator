@@ -19,14 +19,28 @@ public class Game : MonoBehaviour
     public static int funny;
     public static int education;
     public static int makeup;
+    public Topics[] topics;
 
+    private void Awake()
+    {
+        intance = this;
+    }
     private void Start()
     {
-        LoadData();
+      //  ES3.DeleteKey("TopicsArrays");
+        if (ES3.KeyExists("TopicsArrays"))
+            LoadData();
+        else
+        {
+            SaveData();
+        }
     }
-    public static void LoadData()
+    public void LoadData()
     {
-        if (PlayerPrefs.HasKey("Fame"))
+        topics = ES3.Load<Topics[]>("TopicsArrays");
+  
+       // topics = ES3.Load("TopicsArrays",topics);
+        /*if (PlayerPrefs.HasKey("Fame"))
         {
             fame = PlayerPrefs.GetInt("Fame");
         }
@@ -116,11 +130,11 @@ public class Game : MonoBehaviour
         {
             PlayerPrefs.SetInt("makeup", 1);
             makeup = 1;
-        }
+        }*/
     }
-    public static void SaveData()
+    public void SaveData()
     {
-        PlayerPrefs.SetInt("Fame", fame);
+       /* PlayerPrefs.SetInt("Fame", fame);
         PlayerPrefs.SetInt("Cash", cash);
         PlayerPrefs.SetInt("gaming",gaming);
         PlayerPrefs.SetInt("polictics", polictics);
@@ -129,6 +143,8 @@ public class Game : MonoBehaviour
         PlayerPrefs.SetInt("magic", magic);
         PlayerPrefs.SetInt("funny", funny);
         PlayerPrefs.SetInt("education", education);
-        PlayerPrefs.SetInt("makeup", makeup);
+        PlayerPrefs.SetInt("makeup", makeup);*/
+        ES3.Save("TopicsArrays", topics);
+
     }
 }

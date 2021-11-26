@@ -17,7 +17,7 @@ public class GuiManager : MonoBehaviour
     {
         a.transform.DORotate(toPos, duration);
     }
-    public void OpenDrag(RectTransform a,Vector3 toPos,float duration)
+    public static void OpenDrag(RectTransform a,Vector3 toPos,float duration)
     {
         a.DOAnchorPos(toPos, duration,false);
     }

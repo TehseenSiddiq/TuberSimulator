@@ -6,8 +6,9 @@ public class VideoManager : MonoBehaviour
 {
     public static VideoManager intance;
 
-    public Topics[] topic;
+    Topics[] topics;
     public Topics[] trendingTopics;
+    public RectTransform mainPage;
     public GameObject[] menus;
     public int reach;
     int cashMul, subMul;
@@ -20,20 +21,13 @@ public class VideoManager : MonoBehaviour
 
     void TopicValue()
     {
-        topic[0].value = PlayerPrefs.GetInt("gaming");
-        topic[1].value = PlayerPrefs.GetInt("polictics");
-        topic[2].value = PlayerPrefs.GetInt("pets");
-        topic[3].value = PlayerPrefs.GetInt("home");
-        topic[4].value = PlayerPrefs.GetInt("magic");
-        topic[5].value = PlayerPrefs.GetInt("funny"); 
-        topic[6].value = PlayerPrefs.GetInt("education");
-        topic[7].value = PlayerPrefs.GetInt("makeup");
+        topics = Game.intance.topics;
     }
     private void Start()
     {
         TopicValue();
-        trendingTopics[0] = topic[Random.Range(0, topic.Length)];
-        trendingTopics[1] = topic[Random.Range(0, topic.Length)];
+        trendingTopics[0] = topics[Random.Range(0, topics.Length)];
+        trendingTopics[1] = topics[Random.Range(0, topics.Length)];
     }
 
     public void OnClick_SelectTopic()
@@ -82,5 +76,13 @@ public class VideoManager : MonoBehaviour
         menus[3].SetActive(false);
         menus[4].SetActive(true);
         rewardText.text = "You Earnend \n" + reach;
+    }
+    public void Finish(int index)
+    {
+        if (index == 0)
+            menus[0].SetActive(true);
+        else
+            menus[4].SetActive(false);
+        GuiManager.OpenDrag(mainPage, new Vector3(index, 0, 0), MenuUiManager.instance.dargSpeed);
     }
 }

@@ -18,8 +18,10 @@ public class EditorManager : MonoBehaviour
     private void Start()
     {
         phase = 1;
+  
 
         Setting();
+ 
     }
 
     private void LateUpdate()
@@ -56,7 +58,7 @@ public class EditorManager : MonoBehaviour
 
         for (int i = 0; i < options.Length; i++)
         {
-            options[i] = VideoManager.intance.topic[Random.Range(0, VideoManager.intance.topic.Length)].name;
+            options[i] = Game.intance.topics[Random.Range(0, Game.intance.topics.Length)].name;
             text[i].text = options[i];
         }
         select = options[Random.Range(0, options.Length)];

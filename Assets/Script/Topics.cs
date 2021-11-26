@@ -6,6 +6,6 @@ using UnityEngine;
 public class Topics 
 {
     public string name;
-    public Sprite image;
+    public Sprite itemImage,bgImages;
     public int value;
 }

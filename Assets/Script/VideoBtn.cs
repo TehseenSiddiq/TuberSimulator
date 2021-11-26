@@ -10,7 +10,7 @@ public class VideoBtn : MonoBehaviour
     //UI
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI timeText;
-    [SerializeField] Image topic1Image, topic2Image;
+    [SerializeField] Image topic1Image, topic2Image,topic1BG,topic2BG;
 
   
     public string videoName;
@@ -30,13 +30,14 @@ public class VideoBtn : MonoBehaviour
         videoManager = FindObjectOfType<VideoManager>();
         videoName = names[Random.Range(0, names.Length)];
         time = Random.Range(60, 360);
-        topic1 = videoManager.topic[Random.Range(0, videoManager.topic.Length)];
-        topic2 = videoManager.topic[Random.Range(0, videoManager.topic.Length)];
+        //Debug.Log(Game.intance.topics.Length);
+        topic1 = Game.intance.topics[Random.Range(0, Game.intance.topics.Length)];
+        topic2 = Game.intance.topics[Random.Range(0, Game.intance.topics.Length)];
         nameText.text = videoName;
         float minutes = Mathf.FloorToInt(time / 60);
         float second = Mathf.FloorToInt(time % 60);
         timeText.text = string.Format("{00:00}M:{01:00}S", minutes, second);
-        topic1Image.sprite = topic1.image;
-        topic2Image.sprite = topic2.image;
+         topic1Image.sprite = topic1.itemImage;
+        topic2Image.sprite = topic2.itemImage;
     }
 }
