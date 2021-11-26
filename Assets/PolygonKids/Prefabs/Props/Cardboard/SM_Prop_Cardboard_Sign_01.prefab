@@ -1,7 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &64157230747459382
-MeshCollider:
+--- !u!54 &1339785082
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6724204659864997713}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 88
+  m_CollisionDetection: 0
+--- !u!65 &1339785078
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10,10 +26,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 43060386334990532, guid: 683df9ef005be8242b9c68e74834bd02, type: 2}
+  serializedVersion: 2
+  m_Size: {x: 0.9399307, y: 0.48683074, z: 0.08550722}
+  m_Center: {x: 0.0005230756, y: -0.22036438, z: 0.0015408326}
 --- !u!1001 &6724204659864898033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,17 +40,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Cardboard_Sign_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 308f753e430c4d9448332707869975cf, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.465
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.424
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -43,18 +70,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
@@ -63,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 308f753e430c4d9448332707869975cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -77,7 +96,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 308f753e430c4d9448332707869975cf, type: 3}
 --- !u!1 &6724204659864997713 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 308f753e430c4d9448332707869975cf,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 308f753e430c4d9448332707869975cf, type: 3}
   m_PrefabInstance: {fileID: 6724204659864898033}
   m_PrefabAsset: {fileID: 0}

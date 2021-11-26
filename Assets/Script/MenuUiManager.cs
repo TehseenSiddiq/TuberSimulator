@@ -80,12 +80,19 @@ public class MenuUiManager : MonoBehaviour
     public void OpenCharacterEditor()
     {
         GuiManager.OpenDrag(characterCustimization, new Vector3(0, 0, 0), dargSpeed);
-        characterDummy.DOMove(new Vector3(-14, 5, 13), dargSpeed);
+      //  characterDummy.DOMove(new Vector3(-14, 5, 13), dargSpeed);
     }
     public void CloseCharacterEditor()
     {
-        GuiManager.OpenDrag(characterCustimization, new Vector3(-800, 0, 0), dargSpeed);
-        characterDummy.DOMove(new Vector3(50, 0, 13), dargSpeed);
+        GuiManager.OpenDrag(characterCustimization, new Vector3(-3500, 0, 0), dargSpeed);
+     //   characterDummy.DOMove(new Vector3(50, 0, 13), dargSpeed);
+    }
+    public void CloseCharacterPanel()
+    {
+        GuiManager.OpenDrag(characterPanel, new Vector3(-3500, 0, 0), dargSpeed);
+    }public void OpenCharacterPanel()
+    {
+        GuiManager.OpenDrag(characterPanel, new Vector3(0, 0, 0), dargSpeed);
     }
     public void ShopMenu(int a)
     {
