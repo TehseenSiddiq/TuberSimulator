@@ -24,6 +24,7 @@ public class MenuUiManager : MonoBehaviour
     [SerializeField] Transform characterDummy;
     [SerializeField] RectTransform characterPanel;
     [SerializeField] RectTransform shopMenu;
+    [SerializeField] RectTransform communityPanel;
 
     private void Awake()
     {
@@ -90,7 +91,8 @@ public class MenuUiManager : MonoBehaviour
     public void CloseCharacterPanel()
     {
         GuiManager.OpenDrag(characterPanel, new Vector3(-3500, 0, 0), dargSpeed);
-    }public void OpenCharacterPanel()
+    }
+    public void OpenCharacterPanel()
     {
         GuiManager.OpenDrag(characterPanel, new Vector3(0, 0, 0), dargSpeed);
     }
@@ -98,5 +100,9 @@ public class MenuUiManager : MonoBehaviour
     {
         GuiManager.OpenDrag(shopMenu, new Vector3(a, 0, 0), dargSpeed);
       //  characterDummy.DOMove(new Vector3(50, 0, 13), dargSpeed);
+    }
+    public void ToggleCommunityPanel(int a)
+    {
+        GuiManager.OpenDrag(communityPanel, new Vector3(a, 0, 0), dargSpeed);
     }
 }

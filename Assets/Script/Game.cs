@@ -11,14 +11,7 @@ public class Game : MonoBehaviour
     public static int cash;
 
     //Points......
-    public static int gaming;
-    public static int polictics;
-    public static int pets;
-    public static int home;
-    public static int magic;
-    public static int funny;
-    public static int education;
-    public static int makeup;
+ 
     public Topics[] topics;
 
     private void Awake()
@@ -28,6 +21,7 @@ public class Game : MonoBehaviour
     private void Start()
     {
       //  ES3.DeleteKey("TopicsArrays");
+   
         if (ES3.KeyExists("TopicsArrays"))
             LoadData();
         else
@@ -38,7 +32,8 @@ public class Game : MonoBehaviour
     public void LoadData()
     {
         topics = ES3.Load<Topics[]>("TopicsArrays");
-  
+        cash = ES3.Load("Cash", 5000);
+        fame = ES3.Load("Fame", 25);
        // topics = ES3.Load("TopicsArrays",topics);
         /*if (PlayerPrefs.HasKey("Fame"))
         {
@@ -134,16 +129,18 @@ public class Game : MonoBehaviour
     }
     public void SaveData()
     {
-       /* PlayerPrefs.SetInt("Fame", fame);
-        PlayerPrefs.SetInt("Cash", cash);
-        PlayerPrefs.SetInt("gaming",gaming);
-        PlayerPrefs.SetInt("polictics", polictics);
-        PlayerPrefs.SetInt("pets", pets);
-        PlayerPrefs.SetInt("home", home);
-        PlayerPrefs.SetInt("magic", magic);
-        PlayerPrefs.SetInt("funny", funny);
-        PlayerPrefs.SetInt("education", education);
-        PlayerPrefs.SetInt("makeup", makeup);*/
+        /* PlayerPrefs.SetInt("Fame", fame);
+         PlayerPrefs.SetInt("Cash", cash);
+         PlayerPrefs.SetInt("gaming",gaming);
+         PlayerPrefs.SetInt("polictics", polictics);
+         PlayerPrefs.SetInt("pets", pets);
+         PlayerPrefs.SetInt("home", home);
+         PlayerPrefs.SetInt("magic", magic);
+         PlayerPrefs.SetInt("funny", funny);
+         PlayerPrefs.SetInt("education", education);
+         PlayerPrefs.SetInt("makeup", makeup);*/
+        ES3.Save("Cash", cash);
+        ES3.Save("Fame", fame);
         ES3.Save("TopicsArrays", topics);
 
     }

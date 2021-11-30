@@ -5,18 +5,29 @@ using UnityEngine;
 public class ObjectBehaviour : MonoBehaviour
 {
     public static ObjectBehaviour instance;
-   
+    [SerializeField] string KeyCode;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public float min = 1.2f, max = 0.9f;
+    private void Awake()
     {
-        //speed = 0.01f;
+        instance = this;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-       
+        transform.position = ES3.Load(KeyCode, transform.position);
+        transform.eulerAngles = ES3.Load("Angles"+KeyCode, transform.eulerAngles);
+    }
+    private void OnDisable()
+    {
+        SavePos();
+    }
+    private void OnApplicationQuit()
+    {
+        SavePos();
+    }
+    public void SavePos()
+    {
+        ES3.Save(KeyCode, transform.position);
+        ES3.Save("Angles" + KeyCode, transform.eulerAngles);
     }
 }

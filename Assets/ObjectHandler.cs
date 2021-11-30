@@ -12,6 +12,7 @@ public class ObjectHandler : MonoBehaviour
     public float timer = 2;
     Vector3 initialTransform, initialRotation;
     public GameObject EditPanel;
+    private Vector3 newPos;
 
     private void Start()
     {
@@ -56,16 +57,29 @@ public class ObjectHandler : MonoBehaviour
                   if (CanMove)
                   {
                     //EditPanel.SetActive(true);
-                    if (touch.phase == TouchPhase.Moved)
-                    {
-                        Debug.Log("SS");
-
-                        Obj.transform.position = new Vector3(
-                             Obj.transform.position.x + touch.deltaPosition.x + speed,
+                    
+                        
+                       // Vector3 m = new Vector3(touch.position.x, touch.position.y, transform.position.z);
+                       // Vector3 pos = FindObjectOfType<Camera>().ScreenToWorldPoint(m);
+                       /* Obj.transform.position = //new Vector3(pos.x / 16, 0, pos.y * 5);
+                             new Vector3(
+                             Obj.transform.position.x + (touch.deltaPosition.x/16),
                              Obj.transform.position.y,
-                            Obj.transform.position.z + touch.deltaPosition.y + speed
-                            );
-                    }
+                            Obj.transform.position.z + (touch.deltaPosition.y/16) 
+                            );*/
+
+                        Plane plane = new Plane(Vector3.up, new Vector3(0, 0, 0));
+                        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                        float distance;
+                        if (plane.Raycast(ray, out distance))
+                        {
+                        Vector3 pos = ray.GetPoint(distance);
+                        pos.x = Mathf.Clamp(pos.x, Obj.GetComponent<ObjectBehaviour>().min, Obj.GetComponent<ObjectBehaviour>().max);
+                        pos.y = ray.GetPoint(distance).y;
+                        pos.z = Mathf.Clamp(pos.z, Obj.GetComponent<ObjectBehaviour>().min, Obj.GetComponent<ObjectBehaviour>().max);
+                           Obj.transform.position = pos;
+                        }
+                    
                 }
             }
         }
@@ -114,6 +128,7 @@ public class ObjectHandler : MonoBehaviour
     {
         canEdit = false;
         posSet = false;
+        ObjectBehaviour.instance.SavePos();
     }
     public void Cancel()
     {
