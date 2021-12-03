@@ -1,9 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ObjectHandler : MonoBehaviour
 {
+    public static ObjectHandler instance;
+
     public GameObject Obj;
     private Touch touch;
     public float speed = 0.01f;
@@ -13,29 +16,65 @@ public class ObjectHandler : MonoBehaviour
     Vector3 initialTransform, initialRotation;
     public GameObject EditPanel;
     private Vector3 newPos;
+    [SerializeField] Slider yAxisSlider;
 
+    [SerializeField] Button shopBtn;
+    [SerializeField] GameObject panel;
+    public float totalTime = 0;
+    public float spawnTime = 0;
+    public TMP_Text timerText;
+    public Image slider;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         EditPanel.SetActive(false);
 
     }
+    public void Spawn(GameObject a)
+    {
+        canEdit = true;
+        Obj = a;
+
+    }
     private void Update()
     {
+        
+           
+           if (Obj != null)
+               Obj.transform.position = new Vector3(Obj.transform.position.x, yAxisSlider.value, Obj.transform.position.z);
        
-        if (canEdit)
-        {
-            EditPanel.SetActive(true);
-        }
-        else
-        {
-            EditPanel.SetActive(false);
-        }
-       
-        if (Input.touchCount > 0)
-        {
-            touch = Input.GetTouch(0);
-         
-                Debug.Log("FS");
+
+            if (spawnTime > 0)
+            {
+                panel.SetActive(true);
+                shopBtn.interactable = false;
+                spawnTime -= Time.deltaTime;
+                slider.fillAmount = spawnTime / totalTime;
+                Timer(spawnTime);
+            }
+            else
+            {
+                panel.SetActive(false);
+                shopBtn.interactable = true;
+            }
+            if (canEdit)
+            {
+                EditPanel.SetActive(true);
+            }
+            else
+            {
+                EditPanel.SetActive(false);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                touch = Input.GetTouch(0);
+
+                //   Debug.Log("FS");
                 if (touch.phase == TouchPhase.Began)
                 {
 
@@ -45,78 +84,99 @@ public class ObjectHandler : MonoBehaviour
                     {
                         if (hit.collider.tag == "Obstacle")
                         {
-                            Debug.Log(hit.collider.name);
+                            //Debug.Log(hit.collider.name);
                             Obj = hit.collider.gameObject;
                             //Obj.transform.rotation = Quaternion.Euler(0, 90, 0);
                         }
                     }
                 }
+                if(touch.phase == TouchPhase.Stationary)
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        if (hit.collider.tag == "Obstacle")
+                        {
+                            if (timer >= 0)
+                            {
+                                timer -= Time.deltaTime;
 
+                            }
+                            else if (timer < 0)
+                            {
+                                if (!posSet)
+                                {
+                                    initialTransform = Obj.transform.position;
+                                    initialRotation = Obj.transform.eulerAngles;
+                                    posSet = true;
+                                }
+                                CanMove = true;
+                                canEdit = true;
+                            }
+                            if (touch.phase == TouchPhase.Ended)
+                            {
+                                timer = 1;
+                                CanMove = false;
+                            }
+                        }
+                    }
+               
+                }
                 if (Obj != null)
                 {
-                  if (CanMove)
-                  {
+                    if (CanMove)
+                    {
                     //EditPanel.SetActive(true);
-                    
-                        
-                       // Vector3 m = new Vector3(touch.position.x, touch.position.y, transform.position.z);
-                       // Vector3 pos = FindObjectOfType<Camera>().ScreenToWorldPoint(m);
-                       /* Obj.transform.position = //new Vector3(pos.x / 16, 0, pos.y * 5);
-                             new Vector3(
-                             Obj.transform.position.x + (touch.deltaPosition.x/16),
-                             Obj.transform.position.y,
-                            Obj.transform.position.z + (touch.deltaPosition.y/16) 
-                            );*/
 
+
+                    // Vector3 m = new Vector3(touch.position.x, touch.position.y, transform.position.z);
+                    // Vector3 pos = FindObjectOfType<Camera>().ScreenToWorldPoint(m);
+                    /* Obj.transform.position = //new Vector3(pos.x / 16, 0, pos.y * 5);
+                          new Vector3(
+                          Obj.transform.position.x + (touch.deltaPosition.x/16),
+                          Obj.transform.position.y,
+                         Obj.transform.position.z + (touch.deltaPosition.y/16) 
+                         );*/
+                   
                         Plane plane = new Plane(Vector3.up, new Vector3(0, 0, 0));
+                        RaycastHit hit;
                         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                         float distance;
-                        if (plane.Raycast(ray, out distance))
+                        if (Physics.Raycast(ray, out hit))
                         {
-                        Vector3 pos = ray.GetPoint(distance);
-                        pos.x = Mathf.Clamp(pos.x, Obj.GetComponent<ObjectBehaviour>().min, Obj.GetComponent<ObjectBehaviour>().max);
-                        pos.y = ray.GetPoint(distance).y;
-                        pos.z = Mathf.Clamp(pos.z, Obj.GetComponent<ObjectBehaviour>().min, Obj.GetComponent<ObjectBehaviour>().max);
-                           Obj.transform.position = pos;
+                            if (plane.Raycast(ray, out distance))
+                            {
+                                Vector3 pos = ray.GetPoint(distance);
+                                pos.x = Mathf.Clamp(pos.x, Obj.GetComponent<ObjectBehaviour>().min, Obj.GetComponent<ObjectBehaviour>().max);
+                                pos.y = ray.GetPoint(distance).y;
+                                pos.z = Mathf.Clamp(pos.z, Obj.GetComponent<ObjectBehaviour>().min, Obj.GetComponent<ObjectBehaviour>().max);
+                                Obj.transform.position = pos;
+                            }
                         }
-                    
+                    }
                 }
-            }
-        }
-         
-         
-        
+            }  
     }
     private void LateUpdate()
     {
-        touch = Input.GetTouch(0);
+       
+            Debug.Log("Clicked on the GameObject");
+            touch = Input.GetTouch(0);
 
 
-        if (Input.touchCount > 0)
-        {
-            if (timer >= 0)
+            if (Input.touchCount > 0)
             {
-                timer -= Time.deltaTime;
-
+               
             }
-            else if(timer < 0)
-            {
-
-                if (!posSet)
-                {
-                    initialTransform = Obj.transform.position;
-                    initialRotation = Obj.transform.eulerAngles;
-                    posSet = true;
-                }
-                CanMove = true;
-                canEdit = true;
-            }
-            if (touch.phase == TouchPhase.Ended)
-            {
-                timer = 1;
-                CanMove = false;
-            }
-        }
+        
+        
+    }
+    public void Timer(float time)
+    {
+        float minutes = Mathf.FloorToInt(time / 60);
+        float seconds = Mathf.FloorToInt(time % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
     public void Rotate()
     {
@@ -126,15 +186,19 @@ public class ObjectHandler : MonoBehaviour
     }
     public void Done()
     {
+        
         canEdit = false;
         posSet = false;
         ObjectBehaviour.instance.SavePos();
+        Obj = null;
     }
     public void Cancel()
     {
+       
         canEdit = false;
         Obj.transform.eulerAngles = initialRotation;
         Obj.transform.position = initialTransform;
         posSet = false;
+        Obj = null;
     }
 }

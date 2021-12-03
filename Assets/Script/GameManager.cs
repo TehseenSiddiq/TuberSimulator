@@ -29,11 +29,11 @@ public class GameManager : MonoBehaviour
         ES3.Save("Items", items);
        // ES3.Save("ItemTransform", itemsTransform);
     }
-    public void AddItem(GameObject prefab,Transform trans)
+    public void AddItem(GameObject prefab)
     {  
-        GameObject a = Instantiate(prefab, trans.position, Quaternion.identity);
+        //GameObject a = Instantiate(prefab, trans.position, Quaternion.identity);
         
-        items.Add(a);
+        items.Add(prefab);
        // itemsTransform.Add(a.transform);
         ES3.Save("Items", items);
       //  ES3.Save("ItemTransform", itemsTransform);

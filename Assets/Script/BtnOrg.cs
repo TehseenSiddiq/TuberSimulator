@@ -72,15 +72,22 @@ public class BtnOrg : MonoBehaviour
     }
     public void BuyPrefab()
     {
-        GameObject a = Instantiate(prefab, GameManager.intance.spawnPos.position,Quaternion.identity);
-        Debug.Log(a.name);
+        if(Game.cash > price)
+        {
+            GameObject a = Instantiate(prefab, GameManager.intance.spawnPos.position, prefab.transform.rotation);
+            GameManager.intance.AddItem(a);
 
-        //a.GetComponent<ObjectBehivour>().justSpawned = true;
-     //   a.GetComponent<ObjectBehivour>().spawnTime = time;
-       
- 
-        MenuUiManager.instance.ShopMenu(1600);
-        Game.cash -= price;
+            //a.GetComponent<ObjectBehivour>().justSpawned = true;
+            //   a.GetComponent<ObjectBehivour>().spawnTime = time;
+            ObjectHandler.instance.spawnTime = time;
+            ObjectHandler.instance.totalTime = time;
+
+
+            MenuUiManager.instance.ShopMenu(3500);
+            Game.cash -= price;
+            Game.intance.SaveData();
+        }
+      
     }
     
 }

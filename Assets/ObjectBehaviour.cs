@@ -6,11 +6,19 @@ public class ObjectBehaviour : MonoBehaviour
 {
     public static ObjectBehaviour instance;
     [SerializeField] string KeyCode;
-
+    bool justSpawned = false;
+ 
     public float min = 1.2f, max = 0.9f;
     private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        if (justSpawned)
+        {
+            ObjectHandler.instance.Spawn(this.gameObject);
+        }
     }
     private void OnEnable()
     {
