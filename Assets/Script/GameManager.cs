@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-      //  ES3.DeleteKey("Items");
+        //  ES3.DeleteKey("Items");
+     //   ES3.DeleteFile("Items");
         intance = this;
         items = ES3.Load("Items", items);
       //  itemsTransform = ES3.Load("ItemTransform", itemsTransform);

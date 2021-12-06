@@ -8,7 +8,7 @@ public class BtnOrg : MonoBehaviour
     public TMP_Text priceText, timeText, levelText;
     public Image type,typeBg;
     public int price;
-        public float time;
+    public float time;
     public GameObject prefab;
 
     private void Start()
@@ -35,7 +35,7 @@ public class BtnOrg : MonoBehaviour
     }
     public void SetCat(category a,Sprite[] sp)
     {
-        switch(a)
+        switch (a)
         {
             case category.nature:
                 type.sprite = sp[0];
@@ -82,7 +82,7 @@ public class BtnOrg : MonoBehaviour
             ObjectHandler.instance.spawnTime = time;
             ObjectHandler.instance.totalTime = time;
 
-
+            a.GetComponent<ObjectBehaviour>().ObjectPoint();
             MenuUiManager.instance.ShopMenu(3500);
             Game.cash -= price;
             Game.intance.SaveData();

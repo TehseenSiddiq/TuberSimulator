@@ -28,6 +28,7 @@ public class VideoManager : MonoBehaviour
         TopicValue();
         trendingTopics[0] = topics[Random.Range(0, topics.Length)];
         trendingTopics[1] = topics[Random.Range(0, topics.Length)];
+
     }
 
     public void OnClick_SelectTopic()
@@ -79,6 +80,8 @@ public class VideoManager : MonoBehaviour
     }
     public void Finish(int index)
     {
+        Game.cash += reach;
+        Game.intance.SaveData();
         if (index == 0)
             menus[0].SetActive(true);
         else
