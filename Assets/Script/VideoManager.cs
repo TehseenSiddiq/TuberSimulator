@@ -34,7 +34,7 @@ public class VideoManager : MonoBehaviour
     public void OnClick_SelectTopic()
     {
         reach += EventSystem.current.currentSelectedGameObject.GetComponent<VideoBtn>().topic1.value + EventSystem.current.currentSelectedGameObject.GetComponent<VideoBtn>().topic2.value;
-        Debug.Log(reach);
+      //  Debug.Log(reach);
         menus[0].SetActive(false);
         menus[1].SetActive(true);
     }
@@ -80,12 +80,25 @@ public class VideoManager : MonoBehaviour
     }
     public void Finish(int index)
     {
-        Game.cash += reach;
-        Game.intance.SaveData();
+        
+       
         if (index == 0)
             menus[0].SetActive(true);
         else
+        {
             menus[4].SetActive(false);
+            Game.cash += reach;
+           
+            Game.totalVideos++;
+            Game.intance.SaveData();
+        }
+        GuiManager.OpenDrag(mainPage, new Vector3(index, 0, 0), MenuUiManager.instance.dargSpeed);
+
+    }
+    public void CloseOpen(int index)
+    {
+        if (!menus[0].activeSelf && !menus[1].activeSelf && !menus[2].activeSelf && !menus[3].activeSelf)
+            menus[0].SetActive(true);
         GuiManager.OpenDrag(mainPage, new Vector3(index, 0, 0), MenuUiManager.instance.dargSpeed);
     }
 }

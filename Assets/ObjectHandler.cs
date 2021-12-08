@@ -160,17 +160,7 @@ public class ObjectHandler : MonoBehaviour
     }
     private void LateUpdate()
     {
-       
-            Debug.Log("Clicked on the GameObject");
-            touch = Input.GetTouch(0);
 
-
-            if (Input.touchCount > 0)
-            {
-               
-            }
-        
-        
     }
     public void Timer(float time)
     {
