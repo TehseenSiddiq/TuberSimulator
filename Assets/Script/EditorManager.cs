@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class EditorManager : MonoBehaviour
 {
 
-    int phase = 1;
+    public int phase = 1;
     public string[] options;
     public string select;
     public Image[] haiderBtn;
@@ -15,7 +15,7 @@ public class EditorManager : MonoBehaviour
     public TextMeshProUGUI[] text;
     public Color interactableColor;
 
-    private void Start()
+    private void OnEnable()
     {
         phase = 1;
   
@@ -45,8 +45,9 @@ public class EditorManager : MonoBehaviour
        
     }
     
-    void Setting()
+    public void Setting()
     {
+        Debug.Log("S");
         for (int i = 0; i < haiderBtn.Length; i++)
         {
             haiderBtn[i].color = interactableColor;

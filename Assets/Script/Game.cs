@@ -10,6 +10,8 @@ public class Game : MonoBehaviour
     public static int fame;
     public static int cash;
     public static int totalVideos;
+    public static int totalQuest;
+    public static int totalItems;
 
     //Points......
  
@@ -21,8 +23,8 @@ public class Game : MonoBehaviour
     }
     private void Start()
     {
-       // ES3.DeleteKey("Videos");
-   
+        // ES3.DeleteKey("Videos");
+
         if (ES3.KeyExists("TopicsArrays"))
             LoadData();
         else
@@ -36,6 +38,8 @@ public class Game : MonoBehaviour
         cash = ES3.Load("Cash", 5000);
         fame = ES3.Load("Fame", 25);
         totalVideos = ES3.Load("Videos", 0);
+        totalQuest = ES3.Load("Quest", 0);
+        totalItems = ES3.Load("Items", 0);
        // topics = ES3.Load("TopicsArrays",topics);
         /*if (PlayerPrefs.HasKey("Fame"))
         {
@@ -145,6 +149,8 @@ public class Game : MonoBehaviour
         ES3.Save("Fame", fame);
         ES3.Save("TopicsArrays", topics);
         ES3.Save("Videos", totalVideos);
+        ES3.Save("Quest", totalQuest);
+        ES3.Save("Items", totalItems);
 
     }
 }

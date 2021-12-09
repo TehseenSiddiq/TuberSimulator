@@ -85,6 +85,7 @@ public class BtnOrg : MonoBehaviour
             a.GetComponent<ObjectBehaviour>().ObjectPoint();
             MenuUiManager.instance.ShopMenu(3500);
             Game.cash -= price;
+            Game.totalItems++;
             Game.intance.SaveData();
         }
       

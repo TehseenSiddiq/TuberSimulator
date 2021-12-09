@@ -80,8 +80,6 @@ public class VideoManager : MonoBehaviour
     }
     public void Finish(int index)
     {
-        
-       
         if (index == 0)
             menus[0].SetActive(true);
         else
@@ -91,6 +89,10 @@ public class VideoManager : MonoBehaviour
            
             Game.totalVideos++;
             Game.intance.SaveData();
+            reach = 0;
+            FindObjectOfType<EditorManager>().phase = 1;
+            FindObjectOfType<EditorManager>().Setting();
+            RenderManager.intance.Reset();
         }
         GuiManager.OpenDrag(mainPage, new Vector3(index, 0, 0), MenuUiManager.instance.dargSpeed);
 

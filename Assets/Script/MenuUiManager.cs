@@ -14,7 +14,9 @@ public class MenuUiManager : MonoBehaviour
     [SerializeField] RectTransform UpperMenu;
     public float dargSpeed = 1f;
 
+    [Header("Text")]
     public TMP_Text cashText, fameText;
+    public TMP_Text statics;
 
     [Header("Panels")]
     [SerializeField] RectTransform LeaderBoard;
@@ -35,6 +37,10 @@ public class MenuUiManager : MonoBehaviour
     {
         cashText.text = string.Format("{0:0,0}", Game.cash);
         fameText.text = string.Format("{0,0}",Game.fame);
+        statics.text = "Start Date:" +
+            "\nDaily Quest Completed:" + Game.totalQuest +
+            "\nVideos Published:" + Game.totalVideos +
+            "\nTotal Item Purchased:" + Game.totalItems;
     }
     public void BringLeaderboard(float a)
     {
@@ -110,4 +116,6 @@ public class MenuUiManager : MonoBehaviour
     {
         GuiManager.OpenDrag(questPanel, new Vector3(a, 0, 0), dargSpeed);
     }
+
+   
 }

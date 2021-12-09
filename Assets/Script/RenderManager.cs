@@ -50,6 +50,15 @@ public class RenderManager : MonoBehaviour
             timerText.text = "Done!";
         }
     }
+    public void Reset()
+    {
+        percentage = 0;
+        isRendering = false;
+        timer = 0;
+        isTimeSet = false;
+        submitBtn.interactable = false;
+
+    }
     public void Submit()
     {
         VideoManager.intance.Submit();
