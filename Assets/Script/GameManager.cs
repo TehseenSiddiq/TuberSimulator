@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager intance;
 
     public Transform spawnPos;
-    public GameObject[] items;
-    public List<GameObject> itemsLists;
+    //public GameObject[] items;
+    public List<GameObject> items;
   //  public List<Transform> itemsTransform;
 
     private void Awake()
@@ -25,24 +25,24 @@ public class GameManager : MonoBehaviour
     {
       //  ES3.DeleteKey("Items");
         
-        items = ES3.Load("Items", items);
-        itemsLists = items.ToList();
-        for (int i = 0; i < itemsLists.Count; i++)
+        items = ES3.Load("Items2", items);
+      //  itemsLists = items.ToList();
+        for (int i = 0; i < items.Count; i++)
         {
-            Instantiate(itemsLists[i]);
+            Instantiate(items[i]);
         }
     }
     public void SaveItemList()
     {
-        items = itemsLists.ToArray();
-        ES3.Save("Items", items);
+       // items = itemsLists.ToArray();
+        ES3.Save("Items2", items);
        // ES3.Save("ItemTransform", itemsTransform);
     }
     public void AddItem(GameObject prefab)
     {  
         //GameObject a = Instantiate(prefab, trans.position, Quaternion.identity);
         
-        itemsLists.Add(prefab);
+        items.Add(prefab);
         // itemsTransform.Add(a.transform);
         SaveItemList();
       //  ES3.Save("ItemTransform", itemsTransform);

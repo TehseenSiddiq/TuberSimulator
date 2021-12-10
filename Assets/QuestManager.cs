@@ -14,6 +14,8 @@ public class QuestManager : MonoBehaviour
     public List<GameObject> btns;
     public Sprite sp;
 
+    public List<GameObject> objects;
+
     private void Awake()
     {
         instance = this;
@@ -39,7 +41,7 @@ public class QuestManager : MonoBehaviour
     }
     private void Start()
     {
-        
+        objects = ES3.Load("Objects",objects);
     }
     private void LateUpdate()
     {
