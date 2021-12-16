@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1875719535425734757}
   - component: {fileID: 353202374088649688}
   - component: {fileID: 1981166778686328702}
+  - component: {fileID: 9167387004385618155}
   m_Layer: 0
   m_Name: Cardboard_Box
   m_TagString: Obstacle
@@ -117,3 +118,33 @@ MonoBehaviour:
   category: 2
   min: -1.15
   max: 0.9
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 56e22486caa78d546a4a570b50472b7b, type: 3}
+--- !u!114 &9167387004385618155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875719535427671717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 6983279900022781715
+  localRefs:
+    _Keys:
+    - {fileID: 1875719535427671717}
+    - {fileID: 1875719535427504773}
+    - {fileID: 1875719535426701989}
+    - {fileID: 4300000, guid: 089b0da9ec81b244f9276a083126e03e, type: 3}
+    - {fileID: 1875719535425734757}
+    - {fileID: 2100000, guid: 823ac0e34852f1946b70b81aa0a7763c, type: 2}
+    - {fileID: 353202374088649688}
+    - {fileID: 1981166778686328702}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 56e22486caa78d546a4a570b50472b7b, type: 3}
+    - {fileID: 2800000, guid: 56e22486caa78d546a4a570b50472b7b, type: 3}
+    - {fileID: 9167387004385618155}
+    _Values: ebf28191f20ccf79b5a71532c8ef9925bc69d00e6eeee557e3e9b3fc0305427ba093bfdede972d4541d3939a13712a231ed6ab7b69f8cf020c2973dcbfcc7c509b666ccad044b8546ae9b0bd7e7f9571416f20d3a638ed59c4bdea080b09040d

@@ -10,6 +10,8 @@ public class ObjectBehaviour : MonoBehaviour
     [SerializeField] Topics topic;
     [SerializeField] category category;
     public float min = 1.2f, max = 0.9f;
+    public bool isInInventory = false;
+    public Sprite objectImage;
 
     private void Awake()
     {
@@ -21,11 +23,16 @@ public class ObjectBehaviour : MonoBehaviour
         {
             ObjectHandler.instance.Spawn(this.gameObject);
         }
+        Load();
     }
     private void OnEnable()
     {
+      
+    }
+    private void Load()
+    {
         transform.position = ES3.Load(KeyCode, transform.position);
-        transform.eulerAngles = ES3.Load("Angles"+KeyCode, transform.eulerAngles);
+        transform.eulerAngles = ES3.Load("Angles" + KeyCode, transform.eulerAngles);
     }
     public void ObjectPoint()
     {
@@ -73,11 +80,16 @@ public class ObjectBehaviour : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        SavePos();
+        //SavePos();
     }
     public void SavePos()
     {
         ES3.Save(KeyCode, transform.position);
         ES3.Save("Angles" + KeyCode, transform.eulerAngles);
+    }
+    public void Inventory()
+    {
+        isInInventory = true;
+        gameObject.SetActive(false);
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9103517281369045126}
   - component: {fileID: 7608731643465114632}
   - component: {fileID: 7608731643465114633}
+  - component: {fileID: -2064134357208052076}
   m_Layer: 0
   m_Name: PS4
   m_TagString: Obstacle
@@ -117,3 +118,33 @@ MonoBehaviour:
   category: 1
   min: -1.1
   max: 1
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 3ac48dd5db458ae49b20e3439fd7aacc, type: 3}
+--- !u!114 &-2064134357208052076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7302249022709700947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 4887389254568468323
+  localRefs:
+    _Keys:
+    - {fileID: 7302249022709700947}
+    - {fileID: 7934529319533954025}
+    - {fileID: 6463448273678060620}
+    - {fileID: -5495902117074765545, guid: 1d7a4b58a25bee246801f9dbc2bc5b3c, type: 3}
+    - {fileID: 9103517281369045126}
+    - {fileID: -876546973899608171, guid: 1d7a4b58a25bee246801f9dbc2bc5b3c, type: 3}
+    - {fileID: 7608731643465114632}
+    - {fileID: 7608731643465114633}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 3ac48dd5db458ae49b20e3439fd7aacc, type: 3}
+    - {fileID: 2800000, guid: 3ac48dd5db458ae49b20e3439fd7aacc, type: 3}
+    - {fileID: -2064134357208052076}
+    _Values: 9c96ff6beb50724152ed64483ae2e819dee29eeac34c541ac7637542d9775e23214074382e395e0c6254807096e37b44b848337be342f918ec1a324ec5b41b258f41697b56204817bf55b3e8333a4e552245766ebc1dc062c573b2ebf8efb953

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5632675635936432971}
   - component: {fileID: 5632675635934399272}
   - component: {fileID: 5632675635934399273}
+  - component: {fileID: -2855617371385771395}
   m_Layer: 0
   m_Name: Bear_01
   m_TagString: Obstacle
@@ -117,3 +118,33 @@ MonoBehaviour:
   category: 3
   min: -1.3
   max: 1.2
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 925517abedc1d234493c05d3a7d828cb, type: 3}
+--- !u!114 &-2855617371385771395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5632675635934498187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 2080574788126735619
+  localRefs:
+    _Keys:
+    - {fileID: 5632675635934498187}
+    - {fileID: 5632675635934007723}
+    - {fileID: 5632675635935334795}
+    - {fileID: 4300000, guid: 7c525c51f2c006d428997a36112acdf4, type: 3}
+    - {fileID: 5632675635936432971}
+    - {fileID: 2100000, guid: 823ac0e34852f1946b70b81aa0a7763c, type: 2}
+    - {fileID: 5632675635934399272}
+    - {fileID: 5632675635934399273}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 925517abedc1d234493c05d3a7d828cb, type: 3}
+    - {fileID: 2800000, guid: 925517abedc1d234493c05d3a7d828cb, type: 3}
+    - {fileID: -2855617371385771395}
+    _Values: 99cdd0db3b48db10127258b01721f363a54eef1f2ec0d363244c1ca0e8ec4a1be9c5569f7946552ae33707fd682ba6257051bb0d9eff4a5aa033b6ee2b3a2802be74c852cb53ea5dfac40265c7d1cb06a6f63097313c7d1810b040acfd445657

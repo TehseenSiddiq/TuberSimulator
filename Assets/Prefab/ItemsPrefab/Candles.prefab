@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 6185544019812181173}
   - component: {fileID: 5935127474358649688}
   - component: {fileID: 5935127474358649666}
+  - component: {fileID: -1648211610812026263}
   m_Layer: 0
   m_Name: Candles
   m_TagString: Obstacle
@@ -230,3 +231,41 @@ MonoBehaviour:
   category: 6
   min: -1.2
   max: 1.125
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 8d9c91b16a7f3c14cac8d0db54fb9d5e, type: 3}
+--- !u!114 &-1648211610812026263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6817507760024993295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 2917139184834995084
+  localRefs:
+    _Keys:
+    - {fileID: 6817507760024993295}
+    - {fileID: 6185544019812181173}
+    - {fileID: 5935127474358649688}
+    - {fileID: 5935127474358649666}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 8d9c91b16a7f3c14cac8d0db54fb9d5e, type: 3}
+    - {fileID: 2800000, guid: 8d9c91b16a7f3c14cac8d0db54fb9d5e, type: 3}
+    - {fileID: -1648211610812026263}
+    - {fileID: 1402891018597201642}
+    - {fileID: 4415033600669497263}
+    - {fileID: 3308816489678234185}
+    - {fileID: 3077830312668816355, guid: abd1f64383b33ac43956f3e80a9b6992, type: 3}
+    - {fileID: 7374402684429403827}
+    - {fileID: -6478536213147159724, guid: abd1f64383b33ac43956f3e80a9b6992, type: 3}
+    - {fileID: 3090280134847423560}
+    - {fileID: 2089481222863194266}
+    - {fileID: 1196288049363859395}
+    - {fileID: 6239881831769578202, guid: abd1f64383b33ac43956f3e80a9b6992, type: 3}
+    - {fileID: 6769202312557635815}
+    - {fileID: -3846018093981099296, guid: abd1f64383b33ac43956f3e80a9b6992, type: 3}
+    _Values: 5e9b01040772074063de453442aed26b8269a5b6d287c42fd4d139a8ff0b912085042429703c103e348dab9fe8a8023b35e286381dc5561a6030d8d8abb03f6e909946b92c04234659678144db24472b31028de37aa7fc4053f6775eeb16151acd190f4e61490e31bf40dfb644123e7b87fb5756dca40c3796870b237b8131708463893dea06357911bea2ba86b28564cb0d1a19919308290dd7b7d93debb53d

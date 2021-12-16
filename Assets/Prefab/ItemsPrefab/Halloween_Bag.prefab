@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3951021874915682424}
   - component: {fileID: 7771361880302121179}
   - component: {fileID: 2306498636464664966}
+  - component: {fileID: -4182483983332946325}
   m_Layer: 0
   m_Name: Halloween_Bag
   m_TagString: Obstacle
@@ -117,3 +118,31 @@ MonoBehaviour:
   category: 4
   min: -1.35
   max: 1.15
+  isInInventory: 0
+  objectImage: {fileID: 0}
+--- !u!114 &-4182483983332946325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951021874913687224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 4709116343717840632
+  localRefs:
+    _Keys:
+    - {fileID: 3951021874913687224}
+    - {fileID: 3951021874913258136}
+    - {fileID: 3951021874916682424}
+    - {fileID: 4300000, guid: e9ca4fd1a5b4d914fa675446ba5aff81, type: 3}
+    - {fileID: 3951021874915682424}
+    - {fileID: 2100000, guid: 823ac0e34852f1946b70b81aa0a7763c, type: 2}
+    - {fileID: 7771361880302121179}
+    - {fileID: 2306498636464664966}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: -4182483983332946325}
+    _Values: b138f68d764a9578c429038e63041b072db625ed416dff2af5f5a604ee84244b876dc3bc8724787635ea338ad6e8c203e3502ca6fe6dff43c734667e5b6f7649b3b0f90abfa08051d063ddd35e76ff22

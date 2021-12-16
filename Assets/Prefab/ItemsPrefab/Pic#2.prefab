@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1115247452314533970}
   - component: {fileID: 1782213824808262892}
   - component: {fileID: 1782213824808262891}
+  - component: {fileID: -5282556692287912135}
   m_Layer: 0
   m_Name: Pic#2
   m_TagString: Untagged
@@ -117,3 +118,33 @@ MonoBehaviour:
   category: 4
   min: -0.85
   max: 1.27
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 96bdb3b31a8e31f43ba639b162556b09, type: 3}
+--- !u!114 &-5282556692287912135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475733540379402631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 1075671880391471393
+  localRefs:
+    _Keys:
+    - {fileID: 1475733540379402631}
+    - {fileID: 2247590309993249597}
+    - {fileID: 2927006536206054552}
+    - {fileID: -5495902117074765545, guid: d97ecec5c9abc0749a87b832232e2971, type: 3}
+    - {fileID: 1115247452314533970}
+    - {fileID: -876546973899608171, guid: d97ecec5c9abc0749a87b832232e2971, type: 3}
+    - {fileID: 1782213824808262892}
+    - {fileID: 1782213824808262891}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 96bdb3b31a8e31f43ba639b162556b09, type: 3}
+    - {fileID: 2800000, guid: 96bdb3b31a8e31f43ba639b162556b09, type: 3}
+    - {fileID: -5282556692287912135}
+    _Values: 0893d82e41aaee53d0d4fdbf1f3cd55993d17780de8dea397c6f4f616dcc19033bc5864889fd866d504b9a72be39801a5c42b10e166d307b5861564e06b03f6212ff7ba54a723069b6f62fd6d8a20741f035beb07e281931950a9feb53d57360

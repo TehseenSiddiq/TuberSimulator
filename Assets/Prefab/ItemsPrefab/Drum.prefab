@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7239818863425884800}
   - component: {fileID: 7239818863423982319}
   - component: {fileID: 7239818863423982318}
+  - component: {fileID: 6773947295455098870}
   m_Layer: 0
   m_Name: Drum
   m_TagString: Obstacle
@@ -117,3 +118,33 @@ MonoBehaviour:
   category: 1
   min: -1.25
   max: 1.1
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 09539bbb46ae10b438ad51fdcbb61d1e, type: 3}
+--- !u!114 &6773947295455098870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239818863423949888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 8292342920182029280
+  localRefs:
+    _Keys:
+    - {fileID: 7239818863423949888}
+    - {fileID: 7239818863423590496}
+    - {fileID: 7239818863427014720}
+    - {fileID: 4300000, guid: 6986b85363dea7045b5a0a0a5db478c8, type: 3}
+    - {fileID: 7239818863425884800}
+    - {fileID: 2100000, guid: 823ac0e34852f1946b70b81aa0a7763c, type: 2}
+    - {fileID: 7239818863423982319}
+    - {fileID: 7239818863423982318}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 09539bbb46ae10b438ad51fdcbb61d1e, type: 3}
+    - {fileID: 2800000, guid: 09539bbb46ae10b438ad51fdcbb61d1e, type: 3}
+    - {fileID: 6773947295455098870}
+    _Values: dc041a0e69b9e62ff3aaefa9495a8425040e7e4edf19fb5177c8cf6e6fa7026e16f84b3ea687cb123b50d3060300ee7a57068501cf63533cf8377bcd76aa604aa98194500e457f74266fed70ba0ab17649b5e896ddfe614da50f476f0cfe9b19

@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5892293258000427203}
   - component: {fileID: 5892293258002329760}
   - component: {fileID: 5892293258002329761}
+  - component: {fileID: -2688077876522486231}
   m_Layer: 0
   m_Name: Locker_02
   m_TagString: Obstacle
@@ -201,6 +202,51 @@ MonoBehaviour:
   category: 8
   min: -0.9
   max: 1.1
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 7f41ee39b49545e47bff98ffe363bf67, type: 3}
+--- !u!114 &-2688077876522486231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5892293258002429443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 2483824126639624941
+  localRefs:
+    _Keys:
+    - {fileID: 5892293258002429443}
+    - {fileID: 5892293258002721315}
+    - {fileID: 5892293258001394179}
+    - {fileID: 4300000, guid: 11c0cb7c48c0d7b4ebe2c17de3449e2a, type: 3}
+    - {fileID: 5892293258000427203}
+    - {fileID: 2100000, guid: 823ac0e34852f1946b70b81aa0a7763c, type: 2}
+    - {fileID: 5892293258002329760}
+    - {fileID: 5892293258002329761}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 7f41ee39b49545e47bff98ffe363bf67, type: 3}
+    - {fileID: 2800000, guid: 7f41ee39b49545e47bff98ffe363bf67, type: 3}
+    - {fileID: -2688077876522486231}
+    - {fileID: 5892293258002429441}
+    - {fileID: 5892293258002721313}
+    - {fileID: 5892293258001394177}
+    - {fileID: 4300002, guid: 11c0cb7c48c0d7b4ebe2c17de3449e2a, type: 3}
+    - {fileID: 5892293258000427201}
+    - {fileID: 5892293258002429447}
+    - {fileID: 5892293258002721319}
+    - {fileID: 5892293258001394183}
+    - {fileID: 4300004, guid: 11c0cb7c48c0d7b4ebe2c17de3449e2a, type: 3}
+    - {fileID: 5892293258000427207}
+    - {fileID: 5892293258002429445}
+    - {fileID: 5892293258002721317}
+    - {fileID: 5892293258001394181}
+    - {fileID: 4300006, guid: 11c0cb7c48c0d7b4ebe2c17de3449e2a, type: 3}
+    - {fileID: 5892293258000427205}
+    _Values: 2d3bf53a949ea033737c55d15f05c11b8077155fecf71c31367aff7fc21fcf50314d29610226180c1e5186ac212c380e1502a16a3b19353520c304199e20716db559fe52d0dde15960087d3e7dc95262b40e6bbf7d641516e80bbdc0dd01923f3e0c9e84d574203621480b339bf7b85672a16690b4b1ef4f45e73bdc9ba236619bbd01702ace8d3eee359f3559e27a1fc314327f6822f4741d4f3fed39449b7eee56672109b8d35c1528a37f12baf66292e460502b4936424e8aab25715ffb5765dfdc50b663d60ac02a6c6f398c796259dd801ea4eba95b
 --- !u!1 &5892293258002429445
 GameObject:
   m_ObjectHideFlags: 0

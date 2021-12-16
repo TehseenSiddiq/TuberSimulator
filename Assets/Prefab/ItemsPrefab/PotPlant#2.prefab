@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 2904161458953774709}
   - component: {fileID: 3442753463042998684}
   - component: {fileID: 3442753463042998634}
+  - component: {fileID: 5412061155540791235}
   m_Layer: 0
   m_Name: PotPlant#2
   m_TagString: Untagged
@@ -141,8 +142,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCode: Pot_101
+  topic:
+    name: 
+    itemImage: {fileID: 0}
+    bgImages: {fileID: 0}
+    value: 0
+  category: 0
   min: -1.35
   max: 1.2
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 360d949db79279d4b84f2acfe59fd852, type: 3}
+--- !u!114 &5412061155540791235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523836416587316431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 8185718264715186674
+  localRefs:
+    _Keys:
+    - {fileID: 2523836416587316431}
+    - {fileID: 2904161458953774709}
+    - {fileID: 3442753463042998684}
+    - {fileID: 3442753463042998634}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 360d949db79279d4b84f2acfe59fd852, type: 3}
+    - {fileID: 2800000, guid: 360d949db79279d4b84f2acfe59fd852, type: 3}
+    - {fileID: 5412061155540791235}
+    - {fileID: 2125194974540042142}
+    - {fileID: 8358025061372500911}
+    - {fileID: 7331705831594326491}
+    - {fileID: 2534964839176971238, guid: 92f61d88c60803d438db9abaaae46ae5, type: 3}
+    - {fileID: 5491160846024128321}
+    - {fileID: -6478536213147159724, guid: 92f61d88c60803d438db9abaaae46ae5, type: 3}
+    - {fileID: 4574617737720300269}
+    - {fileID: 3392383439580264295}
+    - {fileID: 1952848918467550407}
+    - {fileID: -8104605920791100260, guid: 92f61d88c60803d438db9abaaae46ae5, type: 3}
+    - {fileID: 2528463063482289355}
+    - {fileID: -6564439771795139483, guid: 92f61d88c60803d438db9abaaae46ae5, type: 3}
+    _Values: 31d1679b46c7be49f48fa89198e72017934db43d41f048038b1f360a14d2ff4ea68ce8bf2c6ce245e79132326cb829098f50144dc7294c408864102791b435397009c7da2f1fbc276b6f24d2237b6f43483f7ac3beb2867d3fa736c85cbab36439935c8a80fcc66f93ece25704791d0d0c3320aec68e84417eb66578160b344fbbbf998f1fe5c34b88f4d02e2fd1873976d62b70249dd437e961f8c99ec17960
 --- !u!1 &4574617737720300269
 GameObject:
   m_ObjectHideFlags: 0

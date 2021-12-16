@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4928288371039256421}
   - component: {fileID: 4894978852742682866}
   - component: {fileID: 4894978852742682865}
+  - component: {fileID: 5968262801672066464}
   m_Layer: 0
   m_Name: PotPlant
   m_TagString: Obstacle
@@ -60,8 +61,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCode: Pot_102
+  topic:
+    name: 
+    itemImage: {fileID: 0}
+    bgImages: {fileID: 0}
+    value: 0
+  category: 0
   min: 1.4
   max: 1.1
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 3135eec8b9732bc4881efdaacf21847b, type: 3}
+--- !u!114 &5968262801672066464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5705810610739733983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 7537889211236506170
+  localRefs:
+    _Keys:
+    - {fileID: 5705810610739733983}
+    - {fileID: 4928288371039256421}
+    - {fileID: 4894978852742682866}
+    - {fileID: 4894978852742682865}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 3135eec8b9732bc4881efdaacf21847b, type: 3}
+    - {fileID: 2800000, guid: 3135eec8b9732bc4881efdaacf21847b, type: 3}
+    - {fileID: 5968262801672066464}
+    - {fileID: 8167100686082627214}
+    - {fileID: 2293670174244586175}
+    - {fileID: 690766838257983691}
+    - {fileID: 2534964839176971238, guid: 7be2b92d6f58fb14ba6d4da84f3815f0, type: 3}
+    - {fileID: 2314268491234373201}
+    - {fileID: -6478536213147159724, guid: 7be2b92d6f58fb14ba6d4da84f3815f0, type: 3}
+    - {fileID: 8503495336360979587}
+    - {fileID: 3552147210556378414}
+    - {fileID: 7444993125575283974}
+    - {fileID: 2642655293950279693, guid: 7be2b92d6f58fb14ba6d4da84f3815f0, type: 3}
+    - {fileID: 3588911293292073920}
+    - {fileID: -183530207247392898, guid: 7be2b92d6f58fb14ba6d4da84f3815f0, type: 3}
+    _Values: 001b3a38f5e14b4eccdd2d803eac695302cbb5e26e5c1f511007aed83976082aab0d6fd857f9581b2863b7d61d3a9172f2acda18ac7dd75b0417b70270dc7755d503d5313c91fc04dc2e45f55bb7cb499a21e68d9bf07d2ccaec2ac0beaa540425f255dff03c5060b1d53c7e38e1004bb39296b10a15461b7a5704d743433c7a8349d06862eb595cd186dcc5b3fff4541489f3d3ec5c063ac68ea5b8bed75b0c
 --- !u!1 &8167100686082627214
 GameObject:
   m_ObjectHideFlags: 0

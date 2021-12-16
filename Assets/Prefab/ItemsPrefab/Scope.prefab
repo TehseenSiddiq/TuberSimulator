@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5956662433779727396}
   - component: {fileID: 6476598755375900312}
   - component: {fileID: 6476598755375900313}
+  - component: {fileID: -2174126045925164958}
   m_Layer: 0
   m_Name: Scope
   m_TagString: Untagged
@@ -67,6 +68,38 @@ MonoBehaviour:
   category: 9
   min: 1.35
   max: 1.2
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 6b3e14e8ba1af954da0a3156ba3c94d9, type: 3}
+--- !u!114 &-2174126045925164958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6476598755375900318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 5297746002440076485
+  localRefs:
+    _Keys:
+    - {fileID: 6476598755375900318}
+    - {fileID: 5956662433779727396}
+    - {fileID: 6476598755375900312}
+    - {fileID: 6476598755375900313}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 6b3e14e8ba1af954da0a3156ba3c94d9, type: 3}
+    - {fileID: 2800000, guid: 6b3e14e8ba1af954da0a3156ba3c94d9, type: 3}
+    - {fileID: -2174126045925164958}
+    - {fileID: 8335505241882477969}
+    - {fileID: 1404050903889813727}
+    - {fileID: 5644283660600324147}
+    - {fileID: -7070859126856355693, guid: 305accd36cf70da44bdf79deb2e1247c, type: 3}
+    - {fileID: 3267993889646429743}
+    - {fileID: 1672426696547663846, guid: 305accd36cf70da44bdf79deb2e1247c, type: 3}
+    _Values: 5f90b83ef5a27e6cf87c5033aba8ce480c85b15e71a51b477b58a979564b6d33083e19687b63752ab4685065746cbb1d1398639a51d927467571b94e4bf7c344e9833be9c137c370fbdcaa0954b6d31915c666bde8d2e12e17d3ddec1dc376435cf3840fcf2da4495dd3962e83319a41
 --- !u!1 &8335505241882477969
 GameObject:
   m_ObjectHideFlags: 0

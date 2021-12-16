@@ -8,13 +8,14 @@ public class GameManager : MonoBehaviour
     public static GameManager intance;
 
     public Transform spawnPos;
-    //public GameObject[] items;
+   // public GameObject[] items;
     public List<GameObject> items;
   //  public List<Transform> itemsTransform;
+ //   public List<Vector3> rotations;
 
     private void Awake()
     {
-        //  ES3.DeleteKey("Items");
+        //  ES3.DeleteKey("Items2");
      //   ES3.DeleteFile("Items");
         intance = this;
         
@@ -23,18 +24,24 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-      //  ES3.DeleteKey("Items");
-        
-        items = ES3.Load("Items2", items);
-      //  itemsLists = items.ToList();
+        //  ES3.DeleteKey("Items2");
+
+        LoadItemList();
+       // itemsList = items.ToList();
         for (int i = 0; i < items.Count; i++)
         {
-            Instantiate(items[i]);
+            Debug.Log("Instantiating: " + items[i].name);
+         //  itemsTransform[i] = items[i].transform;
+         //   Instantiate(items[i]);
         }
+    }
+    public void LoadItemList()
+    {
+        items = ES3.Load("Items2", items);
     }
     public void SaveItemList()
     {
-       // items = itemsLists.ToArray();
+       // items = itemsList.ToArray();
         ES3.Save("Items2", items);
        // ES3.Save("ItemTransform", itemsTransform);
     }

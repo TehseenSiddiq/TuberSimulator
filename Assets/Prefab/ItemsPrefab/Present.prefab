@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7048084039401070191}
   - component: {fileID: 8531923009639165963}
   - component: {fileID: 2199193409702433285}
+  - component: {fileID: -8154399855691647891}
   m_Layer: 0
   m_Name: Present
   m_TagString: Obstacle
@@ -199,3 +200,38 @@ MonoBehaviour:
   category: 7
   min: -1.3
   max: 1.135
+  isInInventory: 0
+  objectImage: {fileID: 21300000, guid: 4ca61b64c89b30946b3b365ad6f6da99, type: 3}
+--- !u!114 &-8154399855691647891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048084039403258031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 7130312966627844945
+  localRefs:
+    _Keys:
+    - {fileID: 7048084039403258031}
+    - {fileID: 7048084039403363471}
+    - {fileID: 7048084039399939247}
+    - {fileID: 4300000, guid: 16f86f4327b023b479ac95e662300bea, type: 3}
+    - {fileID: 7048084039401070191}
+    - {fileID: 2100000, guid: 823ac0e34852f1946b70b81aa0a7763c, type: 2}
+    - {fileID: 8531923009639165963}
+    - {fileID: 2199193409702433285}
+    - {fileID: 11500000, guid: 0f58f6d08e8a2a94899f67d0c007b563, type: 3}
+    - {fileID: 21300000, guid: 4ca61b64c89b30946b3b365ad6f6da99, type: 3}
+    - {fileID: 2800000, guid: 4ca61b64c89b30946b3b365ad6f6da99, type: 3}
+    - {fileID: -8154399855691647891}
+    - {fileID: 7048084039403258029}
+    - {fileID: 7048084039403363469}
+    - {fileID: 7048084039399939245}
+    - {fileID: 4300002, guid: 16f86f4327b023b479ac95e662300bea, type: 3}
+    - {fileID: 7048084039401070189}
+    _Values: 9000117f48118473bee59a4faba9a96388ec7172d03f9f601a5c9365b6e36c36638262a74a6da14dc789390f5cab46058e9af1f18381915061b19aa5a5e92a257864ec284702190a7240c6a68750436feb720caf2aa2461bec4df804f8b90c4eb35e96f7bf1ebe6f4c039c3cb8c8274e0af645cd2284051aaa071494fb1d032bb3ea0dd646b44f08
