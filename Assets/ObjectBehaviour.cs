@@ -12,6 +12,7 @@ public class ObjectBehaviour : MonoBehaviour
     public float min = 1.2f, max = 0.9f;
     public bool isInInventory = false;
     public Sprite objectImage;
+    int index;
 
     private void Awake()
     {
@@ -24,6 +25,18 @@ public class ObjectBehaviour : MonoBehaviour
             ObjectHandler.instance.Spawn(this.gameObject);
         }
         Load();
+        for(int i = 0;i < GameManager.intance.items.Count; i++)
+        {
+            if(GameManager.intance.items[i].transform == this.transform)
+            {
+                index = i;
+            }
+        }
+        isInInventory = ES3.Load("Inventory" + KeyCode, isInInventory);
+        if (isInInventory)
+        {
+            gameObject.SetActive(false);
+        }
     }
     private void OnEnable()
     {
@@ -89,7 +102,14 @@ public class ObjectBehaviour : MonoBehaviour
     }
     public void Inventory()
     {
+        
         isInInventory = true;
+        InventoryManager.instance.SetInventory(index);
+        SaveInventoryState();
         gameObject.SetActive(false);
+    }
+    public void SaveInventoryState()
+    {
+        ES3.Save("Inventory" + KeyCode, isInInventory);
     }
 }

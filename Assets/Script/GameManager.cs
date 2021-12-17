@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
          //  itemsTransform[i] = items[i].transform;
          //   Instantiate(items[i]);
         }
+        Debug.Log("Size " + items.Count);
     }
     public void LoadItemList()
     {

@@ -32,6 +32,7 @@ public class ObjectHandler : MonoBehaviour
     private void Start()
     {
         EditPanel.SetActive(false);
+        
 
     }
     public void Spawn(GameObject a)
@@ -86,6 +87,7 @@ public class ObjectHandler : MonoBehaviour
                         {
                             //Debug.Log(hit.collider.name);
                             Obj = hit.collider.gameObject;
+                          //  yAxisSlider.value = transform.position.y;
                             //Obj.transform.rotation = Quaternion.Euler(0, 90, 0);
                         }
                     }
@@ -181,6 +183,12 @@ public class ObjectHandler : MonoBehaviour
         posSet = false;
         ObjectBehaviour.instance.SavePos();
         Obj = null;
+    }
+    public void PutInInventory()
+    {
+        Obj.GetComponent<ObjectBehaviour>().Inventory();
+        canEdit = false;
+        posSet = false;
     }
     public void Cancel()
     {
