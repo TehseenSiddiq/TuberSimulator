@@ -30,11 +30,11 @@ public class GameManager : MonoBehaviour
        // itemsList = items.ToList();
         for (int i = 0; i < items.Count; i++)
         {
-            Debug.Log("Instantiating: " + items[i].name);
+          //  Debug.Log("Instantiating: " + items[i].name);
          //  itemsTransform[i] = items[i].transform;
          //   Instantiate(items[i]);
         }
-        Debug.Log("Size " + items.Count);
+    //    Debug.Log("Size " + items.Count);
     }
     public void LoadItemList()
     {

@@ -13,6 +13,7 @@ public class ObjectBehaviour : MonoBehaviour
     public bool isInInventory = false;
     public Sprite objectImage;
     int index;
+    public int price;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class ObjectBehaviour : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        price = FindObjectOfType<BtnManager>().itemPropertie[index].price;
     }
     private void OnEnable()
     {

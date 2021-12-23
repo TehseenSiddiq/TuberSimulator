@@ -1,4 +1,4 @@
-using System.Collections;
+using TMPro;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,11 +6,15 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
-    [SerializeField] GameObject prefab;
-    public List<Button> btns;
-    [SerializeField] Transform content;
+    [SerializeField] GameObject simpleButton;
+    [SerializeField] GameObject sellableButton;
+    public List<Button> simpleBtns;
+    [SerializeField] List<Button> sellableBtns;
+    [SerializeField] Transform inventoryContent,sellContent,boostedContent;
+    [SerializeField] GameObject sellConfirmPanel;
+    [SerializeField] Button comfirmBtn, denieBtn;
   //  [SerializeField] Image image;
-    
+
 
     private void Awake()
     {
@@ -21,24 +25,44 @@ public class InventoryManager : MonoBehaviour
     {
         this.Wait(1, () =>
         {
-
+            CreateInventory(simpleButton, simpleBtns,inventoryContent);
+            CreateInventory(sellableButton, sellableBtns,sellContent);
             for (int i = 0; i < GameManager.intance.items.Count; i++)
             {
-                GameObject a = Instantiate(prefab, content);
-                btns.Add(a.GetComponent<Button>());
-
-                //   Debug.Log(GameManager.intance.items[i].name);
-                
                 SetInventory(i);
-                btns[i].onClick.AddListener(()=>InventoryOut(i-1));
-                Debug.Log(i);
+                btnSetup(i);
             }
+            
         });
     }
 
+    public void CreateInventory(GameObject prefab,List<Button> btns,Transform content)
+    {
+       // Debug.Log(GameManager.intance.items.Count);
+        for (int i = 0; i < GameManager.intance.items.Count; i++)
+        {            
+            //Debug.Log(GameManager.intance.items[i].name);
+            GameObject a = Instantiate(prefab, content);
+            btns.Add(a.GetComponent<Button>());  
+        }
+        
+    }
+
+    void btnSetup(int i)
+    {
+
+        simpleBtns[i].onClick.AddListener(() => InventoryOut(i));
+        sellableBtns[i].onClick.AddListener(() => SellItem(i));
+    }
     public void SetInventory(int index)
     {
+        Setup(index, simpleBtns);
+        Setup(index, sellableBtns);
+    }
+    void Setup(int index, List<Button> btns)
+    {
         btns[index].transform.GetChild(0).GetComponent<Image>().sprite = GameManager.intance.items[index].GetComponent<ObjectBehaviour>().objectImage;
+        Debug.Log("Index: "+ index);
         if (!GameManager.intance.items[index].GetComponent<ObjectBehaviour>().isInInventory)
         {
             btns[index].interactable = false;
@@ -52,11 +76,45 @@ public class InventoryManager : MonoBehaviour
     }
     void InventoryOut(int index)
     {
-        Debug.Log("Index"+index);
-        GameManager.intance.items[index].GetComponent<ObjectBehaviour>().isInInventory = false;
-        GameManager.intance.items[index].GetComponent<ObjectBehaviour>().SaveInventoryState();
-        GameManager.intance.items[index].SetActive(true);
+          GameManager.intance.items[index].GetComponent<ObjectBehaviour>().isInInventory = false;
+          GameManager.intance.items[index].GetComponent<ObjectBehaviour>().SaveInventoryState();
+          GameManager.intance.items[index].SetActive(true);
+          MenuUiManager.instance.BringInventory(3500);
+          SetInventory(index);
+      //  Debug.Log("Index " + index);
+    }
+    void SellItem(int index)
+    {
+        if(!sellableBtns[index].GetComponent<SellInfo>().isSelected)
+        {
+            sellableBtns[index].GetComponent<SellInfo>().isSelected = true;
+            sellableBtns[index].transform.GetChild(2).gameObject.SetActive(true);
+            sellableBtns[index].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "$" + Mathf.RoundToInt(GameManager.intance.items[index].GetComponent<ObjectBehaviour>().price *0.6f);
+            sellableBtns[index].transform.GetChild(1).gameObject.SetActive(true);
+        }
+        else
+        {
+            sellableBtns[index].GetComponent<SellInfo>().isSelected = false;
+            sellConfirmPanel.SetActive(true);
+            comfirmBtn.onClick.AddListener(()=>SellConfim(index));
+            denieBtn.onClick.AddListener(()=>SellDenie(index));
+        }
+    }
+    void SellConfim(int index)
+    {
+        GameManager.intance.items.Remove(GameManager.intance.items[index]);
+        Game.cash += Mathf.RoundToInt(GameManager.intance.items[index].GetComponent<ObjectBehaviour>().price / 1.5f);
+        CreateInventory(simpleButton, simpleBtns, inventoryContent);
+        CreateInventory(sellableButton, sellableBtns, sellContent);
+        GameManager.intance.SaveItemList();
         MenuUiManager.instance.BringInventory(3500);
-        SetInventory(index);
+    }
+    void SellDenie(int index)
+    {
+        sellableBtns[index].GetComponent<SellInfo>().isSelected = false;
+        sellableBtns[index].transform.GetChild(2).gameObject.SetActive(false);
+        sellableBtns[index].transform.GetChild(1).gameObject.SetActive(false);
+        sellConfirmPanel.SetActive(false);
+     //   MenuUiManager.instance.BringInventory(3500);
     }
 }
