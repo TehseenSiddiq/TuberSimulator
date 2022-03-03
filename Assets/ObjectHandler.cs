@@ -35,6 +35,7 @@ public class ObjectHandler : MonoBehaviour
         
 
     }
+    //Call this function at the object instaniate to make this properties work fine.
     public void Spawn(GameObject a)
     {
         canEdit = true;
@@ -42,12 +43,9 @@ public class ObjectHandler : MonoBehaviour
 
     }
     private void Update()
-    {
-        
-           
+    {       
            if (Obj != null)
                Obj.transform.position = new Vector3(Obj.transform.position.x, yAxisSlider.value, Obj.transform.position.z);
-       
 
             if (spawnTime > 0)
             {
@@ -129,17 +127,7 @@ public class ObjectHandler : MonoBehaviour
                 {
                     if (CanMove)
                     {
-                    //EditPanel.SetActive(true);
-
-
-                    // Vector3 m = new Vector3(touch.position.x, touch.position.y, transform.position.z);
-                    // Vector3 pos = FindObjectOfType<Camera>().ScreenToWorldPoint(m);
-                    /* Obj.transform.position = //new Vector3(pos.x / 16, 0, pos.y * 5);
-                          new Vector3(
-                          Obj.transform.position.x + (touch.deltaPosition.x/16),
-                          Obj.transform.position.y,
-                         Obj.transform.position.z + (touch.deltaPosition.y/16) 
-                         );*/
+                   
                    
                         Plane plane = new Plane(Vector3.up, new Vector3(0, 0, 0));
                         RaycastHit hit;
