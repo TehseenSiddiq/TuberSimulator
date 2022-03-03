@@ -81,6 +81,11 @@ public class MenuUiManager : MonoBehaviour
             GuiManager.OpenDrag(UpperMenu, new Vector3(25, 2000, 0), dargSpeed);
         }
     }
+    public void UpperMenuDarg(int a)
+    {
+        GuiManager.OpenDrag(UpperMenu, new Vector3(25, a, 0), dargSpeed);
+
+    }
     public void Darg(float index)
     {
         GuiManager.OpenDrag(UpperMenu, new Vector3(25, index, 0), dargSpeed);
