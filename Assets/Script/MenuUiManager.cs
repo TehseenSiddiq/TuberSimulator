@@ -28,10 +28,20 @@ public class MenuUiManager : MonoBehaviour
     [SerializeField] RectTransform shopMenu;
     [SerializeField] RectTransform communityPanel;
     [SerializeField] RectTransform questPanel;
-
+    public GameObject[] panels;
+    public RectTransform SplashScreen;
     private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        this.Wait(5, () =>
+        {
+            SplashScreen.transform.DORotate(new Vector3(0, 0, 50), 1, RotateMode.Fast);
+            SplashScreen.transform.DOScale(0, 2.5f);
+            GuiManager.OpenDrag(SplashScreen, new Vector3(3500, 0, 0), 3);
+        });
     }
     private void LateUpdate()
     {
@@ -121,6 +131,16 @@ public class MenuUiManager : MonoBehaviour
     {
         GuiManager.OpenDrag(questPanel, new Vector3(a, 0, 0), dargSpeed);
     }
-
-   
+    public void OffOnPanels(int a)
+    {
+        foreach(GameObject panel in panels)
+        {
+            panel.SetActive(false);
+        }
+        panels[a].SetActive(true);
+    }
+   public void OpenURL(string url)
+    {
+        Application.OpenURL(url);
+    }
 }
